@@ -14,5 +14,20 @@ def get_char_count(file_contents):
                 dict[char] = 1
             else:
                 dict[char] += 1
-    return dict 
+    return dict
+
+
+
+def sorted_dicts(dict):
+    """
+    this function takes a dictionary and returns a sorted list of dictionaries sorted by the value of the dictionary
+    """
+    list_of_dicts = []
+    for char in dict:
+        key = char
+        num = dict[char]
+        list_of_dicts.append({key: num})
+        list_of_dicts.sort(reverse=True, key=lambda x: list(x.values())[0])      
+    return(list_of_dicts)
+        
 
