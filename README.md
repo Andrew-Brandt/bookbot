@@ -1,3 +1,3 @@
 # bookbot
 
-BookBot is my first [Boot.dev](https://www.boot.dev) project!
+BookBot analyzes a book at a given directory path and returns a report on the book's word count and unique character counts.

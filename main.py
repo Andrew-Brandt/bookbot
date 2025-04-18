@@ -1,6 +1,17 @@
 from stats import get_word_count, get_char_count, sorted_dicts
+import sys
 
-FRANK = "books/frankenstein.txt"
+
+def get_path():
+    try:
+       return sys.argv[1]
+    except Exception as e:
+       
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
+
+
 
 def get_book_text(book):
     """
@@ -14,9 +25,10 @@ def get_book_text(book):
 
 
 def main():
-    text = get_book_text(FRANK)
+    path = get_path()
+    text = get_book_text(path)
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {FRANK}...")
+    print(f"Analyzing book found at {path}...")
     print("----------- Word Count ----------")
     get_word_count(text)
     print("--------- Character Count -------")
